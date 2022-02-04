@@ -16,3 +16,11 @@ MainMenu::MainMenu()
 MainMenu::~MainMenu()
 {
 }
+
+void setupButtons(sf::Font& t_font)
+{
+
+
+
+
+}
