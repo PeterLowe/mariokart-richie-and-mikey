@@ -17,7 +17,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Game.h"
-
+#include "SplashScreen.h"
+#include <iostream>
 /*
 Michael Rapciak and Richie Buturla
 Sessions:
@@ -31,12 +32,23 @@ int main()
 	game.run(); 
 }
 
+float Game::s_screenWidth = 600;
+float Game::s_screenHeight = 400;
+GameState Game::currentState = GameState::Splash;
+
  
 /// <summary>
 /// @brief main game constructor creating the render window with settings
 /// </summary>
-Game::Game() : m_window(sf::VideoMode{ 800U,600U,32U }, "MarioKart", sf::Style::Default)
-{			
+Game::Game() : m_window(sf::VideoMode(static_cast<unsigned>(s_screenWidth),static_cast<unsigned>(s_screenHeight)), "MarioKart", sf::Style::Default)
+{
+	//this is temporary run check. change after
+	sf::Font m_font;
+	if (!m_font.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
+	{
+		std::cout << "error loading font";
+	}
+	m_splashscreen.initialise(m_font);
 }
 
 /// <summary>
@@ -71,6 +83,24 @@ void Game::processEvents()
 		{
 			m_window.close();
 		}
+		switch (currentState)
+		{
+		case GameState::None:
+			break;
+		case GameState::License:
+			break;
+		case GameState::Splash:
+			m_splashscreen.processInput(event);
+			break;
+		case GameState::MainMenu:
+			break;
+		case GameState::Help:
+			break;
+		case GameState::Game:
+			break;
+		default:
+			break;
+		}
 	}
 }
 
@@ -81,5 +111,6 @@ void Game::update(sf::Time time)
 void Game::render()
 {
 	m_window.clear();
+	m_splashscreen.render(m_window);
 	m_window.display();
 }

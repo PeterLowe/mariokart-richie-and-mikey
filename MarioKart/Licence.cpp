@@ -1,3 +1,6 @@
+/// <summary>
+/// Richard Buturla
+/// </summary>
 
 #include "Licence.h"
 #include "Game.h"

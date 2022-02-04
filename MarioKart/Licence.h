@@ -4,9 +4,7 @@
 #include <SFML\Graphics.hpp>
 
 /// <summary>
-/// @author Peter Lowe
-/// @version 1.0
-/// @date may 2016
+/// @author Richard Buturla
 /// 
 /// \brief simple page to display Licence text for fixed period.
 /// 
