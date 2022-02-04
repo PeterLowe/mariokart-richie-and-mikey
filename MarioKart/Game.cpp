@@ -31,6 +31,8 @@ int main()
 	game.run(); 
 }
 
+float Game::s_screenWidth = 800;
+float Game::s_screenHeight = 600;
  
 /// <summary>
 /// @brief main game constructor creating the render window with settings
