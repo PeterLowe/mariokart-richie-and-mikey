@@ -106,11 +106,47 @@ void Game::processEvents()
 
 void Game::update(sf::Time time)
 {
+	switch (currentState)
+	{
+	case GameState::None:
+		break;
+	case GameState::License:
+		break;
+	case GameState::Splash:
+		m_splashscreen.update(time);
+		break;
+	case GameState::MainMenu:
+		break;
+	case GameState::Help:
+		break;
+	case GameState::Game:
+		break;
+	default:
+		break;
+	}
 }
 
 void Game::render()
 {
 	m_window.clear();
+	switch (currentState)
+	{
+	case GameState::None:
+		break;
+	case GameState::License:
+		break;
+	case GameState::Splash:
+		m_splashscreen.render(m_window); 
+		break;
+	case GameState::MainMenu:
+		break;
+	case GameState::Help:
+		break;
+	case GameState::Game:
+		break;
+	default:
+		break;
+	}
 	m_splashscreen.render(m_window);
 	m_window.display();
 }
