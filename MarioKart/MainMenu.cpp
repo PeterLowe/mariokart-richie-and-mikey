@@ -17,10 +17,10 @@ MainMenu::~MainMenu()
 {
 }
 
-void setupButtons(sf::Font& t_font)
+void MainMenu::setupButtons(sf::Font& t_font)
 {
-
-
-
-
+	m_topOffset = 50;
+	m_verticalSpace = 100;
+	m_buttonWidth = 200;
+	m_leftOffset = (Game::s_screenWidth - m_buttonWidth) / 2;
 }
