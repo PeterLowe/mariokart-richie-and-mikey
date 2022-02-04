@@ -19,8 +19,10 @@
 #include "Game.h"
 
 /*
-Written by Peter Lowe May 2015
-Total Project Time ~ 10 hours*/
+Michael Rapciak and Richie Buturla
+Sessions:
+
+*/
 
 
 int main()

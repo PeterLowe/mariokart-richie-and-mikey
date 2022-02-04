@@ -5,10 +5,7 @@
 
 
 /// <summary>
-/// @author Peter Lowe
-/// @version 1.0
-/// @date May2016
-/// 
+/// Michael Rapciak and Richie Buturla
 /// </summary>
 
 MainMenu::MainMenu()

@@ -7,10 +7,7 @@
 
 
 /// <summary>
-/// @author Peter Lowe
-/// @version 1.0
-/// @date may 2016
-/// @brief main game class conatins main and run game loop.
+/// Michal Rapciak and Richie Buturla
 /// </summary>
 class Game
 {

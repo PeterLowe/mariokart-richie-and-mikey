@@ -5,10 +5,7 @@
 
 
 /// <summary>
-/// @author Peter Lowe
-/// @version 1.0
-/// @date may 2016
-/// 
+/// Michal Rapciak and Richie Buturla
 /// </summary>
 
 Player::Player()

@@ -4,10 +4,7 @@
 #include <SFML\Graphics.hpp>
 
 /// <summary>
-/// @author Peter Lowe
-/// @version 1.0
-/// @date may 2016
-/// 
+/// Michal Rapciak
 /// \brief simple page to display help text.
 /// 
 /// </summary>
