@@ -25,11 +25,10 @@ class Game
 public:
 	Game();
 	void run();
-
 	static float s_screenWidth;
-	static float s_screenHeight;	
-	static GameState currentState;
-	
+	static float s_screenHeight;
+	GameState Game::currentState = GameState::License;
+
 protected:
 	void	processEvents();
 	void	update(sf::Time);
