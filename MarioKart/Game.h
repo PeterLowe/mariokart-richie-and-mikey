@@ -4,6 +4,7 @@
 // features  used only in degub mode
 
 #include "SplashScreen.h"
+#include "Licence.h"
 
 /// <summary>
 /// Michal Rapciak and Richie Buturla
@@ -33,9 +34,13 @@ protected:
 	void	processEvents();
 	void	update(sf::Time);
 	void	render();
+	void loadContent();
 	
 	sf::RenderWindow m_window;
 
-	SplashScreen m_splashscreen; //used to run splash screen
+	SplashScreen m_splashScreen; //used to run splash screen
+	Licence m_licenceScreen;
+
+	sf::Font m_arialFont;
 };
 #endif // !GAME_H

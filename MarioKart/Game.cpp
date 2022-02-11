@@ -34,7 +34,7 @@ int main()
 
 float Game::s_screenWidth = 600;
 float Game::s_screenHeight = 400;
-GameState Game::currentState = GameState::Splash;
+GameState Game::currentState = GameState::License;
 
  
 /// <summary>
@@ -42,13 +42,7 @@ GameState Game::currentState = GameState::Splash;
 /// </summary>
 Game::Game() : m_window(sf::VideoMode(static_cast<unsigned>(s_screenWidth),static_cast<unsigned>(s_screenHeight)), "MarioKart", sf::Style::Default)
 {
-	//this is temporary run check. change after
-	sf::Font m_font;
-	if (!m_font.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
-	{
-		std::cout << "error loading font";
-	}
-	m_splashscreen.initialise(m_font);
+	loadContent();
 }
 
 /// <summary>
@@ -90,7 +84,7 @@ void Game::processEvents()
 		case GameState::License:
 			break;
 		case GameState::Splash:
-			m_splashscreen.processInput(event);
+			m_splashScreen.processInput(event);
 			break;
 		case GameState::MainMenu:
 			break;
@@ -111,9 +105,10 @@ void Game::update(sf::Time time)
 	case GameState::None:
 		break;
 	case GameState::License:
+		m_licenceScreen.update(time);
 		break;
 	case GameState::Splash:
-		m_splashscreen.update(time);
+		m_splashScreen.update(time);
 		break;
 	case GameState::MainMenu:
 		break;
@@ -134,9 +129,10 @@ void Game::render()
 	case GameState::None:
 		break;
 	case GameState::License:
+		m_licenceScreen.render(m_window);
 		break;
 	case GameState::Splash:
-		m_splashscreen.render(m_window); 
+		m_splashScreen.render(m_window); 
 		break;
 	case GameState::MainMenu:
 		break;
@@ -147,6 +143,16 @@ void Game::render()
 	default:
 		break;
 	}
-	m_splashscreen.render(m_window);
 	m_window.display();
+}
+
+void Game::loadContent()
+{
+	if (!m_arialFont.loadFromFile("ASSETS/FONTS/BebasNeue.otf"))
+	{
+		std::cout << "error loading font";
+	}
+
+	m_splashScreen.initialise(m_arialFont);
+	m_licenceScreen.initialise(m_arialFont);
 }
