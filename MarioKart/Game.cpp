@@ -18,6 +18,8 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "SplashScreen.h"
+#include "Licence.h"
+#include "MainMenu.h"
 #include <iostream>
 /*
 Michael Rapciak and Richie Buturla
@@ -111,6 +113,7 @@ void Game::update(sf::Time time)
 		m_splashScreen.update(time);
 		break;
 	case GameState::MainMenu:
+		m_mainMenu.update(time, m_window);
 		break;
 	case GameState::Help:
 		break;
@@ -135,6 +138,7 @@ void Game::render()
 		m_splashScreen.render(m_window); 
 		break;
 	case GameState::MainMenu:
+		m_mainMenu.render(m_window);
 		break;
 	case GameState::Help:
 		break;
@@ -155,4 +159,5 @@ void Game::loadContent()
 
 	m_splashScreen.initialise(m_arialFont);
 	m_licenceScreen.initialise(m_arialFont);
+	m_mainMenu.setupButtons(m_arialFont);
 }

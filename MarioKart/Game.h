@@ -5,6 +5,7 @@
 
 #include "SplashScreen.h"
 #include "Licence.h"
+#include "MainMenu.h"
 
 /// <summary>
 /// Michal Rapciak and Richie Buturla
@@ -27,7 +28,7 @@ public:
 	void run();
 	static float s_screenWidth;
 	static float s_screenHeight;
-	GameState Game::currentState = GameState::License;
+	static GameState currentState;
 
 protected:
 	void	processEvents();
@@ -39,6 +40,7 @@ protected:
 
 	SplashScreen m_splashScreen; //used to run splash screen
 	Licence m_licenceScreen;
+	MainMenu m_mainMenu;
 
 	sf::Font m_arialFont;
 };
